@@ -883,3 +883,61 @@ body {
         border-radius: 20px;
     }
 }
+
+html, body {
+    overflow-x: hidden; /* Evita el scroll lateral */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box; /* Crucial para que el padding no estire el ancho */
+}
+
+@media (max-width: 600px) {
+    .grid-sedes {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra las tarjetas una tras otra */
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+        gap: 20px;
+    }
+
+    .mall-card-link {
+        width: 90%; /* Ocupa casi todo el ancho, dejando margen igual a los lados */
+        max-width: 340px; /* Tamaño ideal para que no sea gigante */
+        margin: 0 auto; /* Centra el link */
+    }
+
+    .mall-card {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+/* Slider al 100% */
+.slider-container, .footer {
+    width: 100% !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box;
+}
+
+/* Ajuste específico para el contenido del footer */
+.footer-content {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
