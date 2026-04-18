@@ -591,3 +591,28 @@ body {
         scale: 1.1; /* Lo hacemos un poquito más grande para que combine */
     }
 }
+
+/* ==========================================================================
+   SEDES - AJUSTE DE TAMAÑO PARA PC
+   ========================================================================== */
+.mall-card {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Mantiene la forma cuadrada */
+    max-width: 350px;    /* Evita que crezcan demasiado en monitores grandes */
+    margin: 0 auto;      /* Los centra si el contenedor es más ancho */
+    border-radius: 30px; 
+    overflow: hidden; 
+    position: relative; 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+    cursor: pointer;
+}
+
+/* Ajuste de la rejilla para que no se estiren */
+.grid-sedes { 
+    display: grid;
+    /* Forzamos 3 o 4 columnas en PC para que los cuadros sean más pequeños */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
