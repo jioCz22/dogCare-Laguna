@@ -941,3 +941,22 @@ html, body {
     align-items: center;
     text-align: center;
 }
+
+/* Ajuste general del logo */
+.logo img {
+    height: 60px; /* Aumenta este número para hacerlo más grande */
+    width: auto;  /* Mantiene la proporción */
+    transition: transform 0.3s ease;
+}
+
+/* Ajuste específico para que en Móvil no se vea minúsculo */
+@media (max-width: 600px) {
+    .logo img {
+        height: 50px; /* Tamaño mayor para celulares */
+    }
+    
+    /* Si el contenedor del logo es el que lo limita: */
+    .navbar-container {
+        padding: 10px 20px;
+    }
+}
