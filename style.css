@@ -812,3 +812,49 @@ body {
     margin-bottom: 20px;
     display: block;
 }
+
+/* ==========================================================================
+   SEDES - DISEÑO RESPONSIVO (PC, TABLET Y MÓVIL)
+   ========================================================================== */
+
+.grid-sedes {
+    display: grid;
+    /* Por defecto en PC: 3 columnas */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.mall-card {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Mantiene el cuadrado perfecto */
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+/* --- AJUSTE PARA TABLET (Menos de 992px) --- */
+@media (max-width: 992px) {
+    .grid-sedes {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+        gap: 20px;
+    }
+}
+
+/* --- AJUSTE PARA TELÉFONO (Menos de 600px) --- */
+@media (max-width: 600px) {
+    .grid-sedes {
+        /* Aquí está el truco: 1 sola columna para que ocupen el ancho */
+        grid-template-columns: 1fr; 
+        gap: 25px;
+        /* Limitamos el ancho en móvil para que no se vean gigantescas */
+        max-width: 350px; 
+    }
+
+    .mall-card {
+        border-radius: 20px; /* Bordes un poco más suaves en móvil */
+    }
+}
