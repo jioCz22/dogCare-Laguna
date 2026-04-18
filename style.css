@@ -858,3 +858,28 @@ body {
         border-radius: 20px; /* Bordes un poco más suaves en móvil */
     }
 }
+
+@media (max-width: 600px) {
+    .grid-sedes {
+        /* 1. Una sola columna */
+        grid-template-columns: 1fr; 
+        
+        /* 2. El truco del centrado: margin auto a los lados */
+        margin: 20px auto; 
+        
+        /* 3. Ajustamos el ancho para que no sea gigante pero esté centrado */
+        width: 90%; 
+        max-width: 350px; 
+        
+        /* 4. Espaciado interno para que no toquen los bordes físicos del cel */
+        padding: 0 10px; 
+        
+        gap: 25px;
+    }
+
+    .mall-card {
+        /* Asegura que la tarjeta use todo el ancho de su nuevo contenedor centrado */
+        width: 100%; 
+        border-radius: 20px;
+    }
+}
