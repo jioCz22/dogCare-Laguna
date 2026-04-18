@@ -653,3 +653,52 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+
+/* Contenedor Principal de las Sedes */
+.grid-sedes {
+    display: grid;
+    /* Esto obliga a que siempre haya 3 columnas en PC */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.mall-card {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Formato cuadrado */
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.mall-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   RESPONSIVIDAD (Celular)
+   ========================================================================== */
+@media (max-width: 900px) {
+    .grid-sedes {
+        /* En tablets o pantallas medianas, bajamos a 2 columnas */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-sedes {
+        /* En teléfono, una debajo de la otra (1 sola columna) */
+        grid-template-columns: 1fr;
+    }
+    
+    .mall-card {
+        /* Opcional: En móvil puedes hacerlas un poquito menos altas */
+        aspect-ratio: 1.2 / 1; 
+    }
+}
