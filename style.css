@@ -564,3 +564,30 @@ body {
         max-width: 250px;
     }
 }
+
+@media (max-width: 768px) {
+    /* ... (tus otros estilos de hero y h1) ... */
+
+    /* 1. Hacemos la Navbar un poco más alta en móvil si es necesario */
+    .navbar {
+        height: 80px; 
+    }
+
+    /* 2. Ajustamos el contenedor para que el logo tenga espacio */
+    .nav-container {
+        padding: 0 15px;
+    }
+
+    /* 3. El ajuste clave para el Logo */
+    .logo {
+        height: 70px; /* Aumentamos de 60px a 70px o incluso 80px según tu imagen */
+        margin-top: 5px; /* Centramos visualmente */
+        width: auto;
+        max-width: 180px; /* Evita que choque con el menú hamburguesa */
+    }
+
+    /* 4. Aseguramos que el botón hamburguesa esté bien alineado con el logo grande */
+    .hamburger {
+        scale: 1.1; /* Lo hacemos un poquito más grande para que combine */
+    }
+}
