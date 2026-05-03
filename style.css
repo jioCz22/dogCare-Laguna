@@ -5,14 +5,14 @@
    ========================================================================== */
 
 :root {
-    --primary: #0056b3;
-    --accent: #ff8800;
-    --bg-light: #ffffff;
-    --bg-soft: #f8fafc;
-    --text-dark: #0f172a;
-    --text-muted: #64748b;
-    --footer-dark: #0a0e17;
-    --corp-gray: #f4f4f4;
+   
+    /* Cambiamos el azul por un gris oscuro elegante para que el naranja resalte sin chocar */
+    --primary: #1e293b; 
+    --accent: #ff8800;   /* Naranja vibrante */
+    --secondary: #ffcc00; /* Ámbar/Amarillo para detalles */
+    --bg-soft: #fffbf5;  /* Un blanco con un toque cálido (hueso) */
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
     --nav-height: 100px;
     --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -865,4 +865,174 @@ html, body {
 .strategy-card:hover .img-vertical {
     transform: scale(1.05);
     transition: transform 0.5s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   SERVICIOS - DISEÑO PREMIUM (GLASSMORPHISM & SOFT GLOW)
+   ========================================================================== */
+
+/* 1. Estilo Base (PC) */
+.service-card {
+    background: #ffffff; /* */
+    padding: 35px 25px; /* */
+    text-align: center; /* */
+    border-radius: 30px; /* Bordes más orgánicos */
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1); /* Transición más suave[cite: 3] */
+    
+    /* BORDE: Usamos un gris muy suave pero con un toque de sombra interna */
+    border: 1px solid rgba(0, 0, 0, 0.08); 
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.03),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.5); /* Efecto de brillo interno */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decoración superior sutil (reemplaza el borde grueso azul) */
+.service-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #ffcc00, #ff8800); /* Degradado naranja/amarillo[cite: 3] */
+    opacity: 0.3; /* Muy tenue al inicio */
+    transition: opacity 0.3s ease;
+}
+
+/* 2. EFECTO HOVER (PC) */
+.service-card:hover {
+    transform: translateY(-12px); /*[cite: 3] */
+    background: #fff;
+    border-color: rgba(255, 136, 0, 0.4); /* El borde se ilumina en naranja suave[cite: 3] */
+    box-shadow: 
+        0 20px 40px rgba(255, 136, 0, 0.1), /* Sombra con tono naranja[cite: 3] */
+        0 0 0 2px rgba(255, 204, 0, 0.1); 
+}
+
+.service-card:hover::before {
+    opacity: 1; /* El degradado superior brilla al pasar el mouse */
+}
+
+/* 3. Ajustes para MÓVIL (El "Truco" para que no se pierda) */
+@media (max-width: 600px) {
+    .service-card {
+        background: linear-gradient(145deg, #ffffff, #f9fafb); /* Fondo con ligero volumen */
+        border: 1px solid rgba(0, 0, 0, 0.1); /* Borde un poco más definido[cite: 3] */
+        margin-bottom: 25px; /*[cite: 3] */
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* Sombra más notable en el cel */
+    }
+
+    /* En móvil, el brillo naranja se activa al tocar */
+    .service-card:active {
+        transform: scale(0.96); /*[cite: 3] */
+        border-color: #ff8800; /*[cite: 3] */
+        box-shadow: 0 5px 15px rgba(255, 136, 0, 0.2); /*[cite: 3] */
+    }
+}
+
+/* Color al pasar el mouse por los links del menú */
+.nav-links a:hover { 
+    color: var(--accent); 
+}
+
+/* El botón hamburguesa en móvil ahora será naranja para conectar con el logo */
+.hamburger span {
+    background: var(--accent);
+}
+
+
+.strategy-card {
+    background: #ffffff;
+    /* Cambiamos el borde azul por el naranja de la marca */
+    border-left: 5px solid var(--accent); 
+    border-radius: 15px;
+}
+
+.strategy-content h3 {
+    /* El título ya no será azul, será el gris oscuro o naranja */
+    color: var(--accent); 
+    font-weight: 800;
+}
+
+.corp-badge {
+    /* Reforzamos el color de "Nuestra Visión" */
+    background: rgba(255, 136, 0, 0.1);
+    color: var(--accent);
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+/* Forzamos que AMBAS tarjetas tengan la misma capacidad de respuesta */
+.strategy-card {
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 0.4s ease, 
+                background-color 0.3s ease !important;
+    cursor: pointer;
+    will-change: transform; /* Optimiza la animación para que no se vea trabada */
+}
+
+.strategy-card:hover {
+    transform: translateY(-10px) scale(1.02) !important;
+    box-shadow: 0 15px 35px rgba(255, 136, 0, 0.2) !important;
+    background-color: #ffffff !important;
+    z-index: 10;
+}
+
+/* Aseguramos que la imagen interna también reaccione */
+.strategy-card:hover .img-vertical {
+    transform: scale(1.1);
+    transition: transform 0.6s ease;
+}
+
+.footer {
+    background: #0f172a; /* Azul muy oscuro (Navy Charcoal) */
+    color: #e2e8f0; /* Texto gris muy claro para lectura suave */
+    padding: 80px 0 40px;
+    border-top: 4px solid var(--accent); /* Línea naranja superior para conectar */
+}
+
+.footer-logo {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.footer-logo span {
+    color: var(--accent); /* El "Laguna" resaltará en naranja */
+}
+
+.footer h4 {
+    color: #ffffff;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+/* Línea decorativa bajo los títulos del footer */
+.footer h4::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--accent);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 50px;
+    padding-top: 30px;
+    color: #94a3b8;
 }
