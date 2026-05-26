@@ -1047,8 +1047,7 @@ html, body {
     cursor: pointer;
     overflow: hidden;
     transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
-    max-height: 250px; /* Altura inicial */
-}
+    max-height: 265px;}
 
 .service-card.expanded {
     max-height: 1000px; /* Se expande suavemente */
