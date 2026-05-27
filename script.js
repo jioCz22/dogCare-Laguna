@@ -73,27 +73,43 @@ function renderServicios() {
         
         // Estructura con área de detalles oculta (se controla con CSS)
         card.innerHTML = `
-            <h3 style="color: var(--primary); margin-bottom: 10px;">${s.n}</h3>
-            <p style="color: #64748b; margin-bottom: 15px; font-size: 0.9rem;">${s.d}</p>
-            <div class="price-tag" style="background: var(--primary); color: white; padding: 5px 15px; border-radius: 20px; display: inline-block; font-weight: 800;">
-                $${s.p} MXN
-            </div>
-            <div class="service-details" style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(0,0,0,0.1); font-size: 0.85rem; color: #475569;">
-                <p>${s.detalle}</p>
-                <ul style="margin-top: 10px; padding-left: 15px; list-style: circle;">
-                    <li>Supervisión constante</li>
-                    <li>Reporte de bienestar incluido</li>
-                </ul>
-            </div>
-            <p style="margin-top: 15px; font-size: 0.7rem; color: var(--accent); font-weight: 600;">
-                <i class="fas fa-plus-circle"></i> Toca para ver más detalles
-            </p>
-        `;
+    <h3 style="color: var(--primary); margin-bottom: 10px;">${s.n}</h3>
+    <p style="color: #64748b; margin-bottom: 15px; font-size: 0.9rem;">${s.d}</p>
+
+    <div class="price-tag" style="background: var(--primary); color: white; padding: 5px 15px; border-radius: 20px; display: inline-block; font-weight: 800;">
+        $${s.p} MXN
+    </div>
+
+    <div class="service-details" style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(0,0,0,0.1); font-size: 0.85rem; color: #475569;">
+        <p>${s.detalle}</p>
+
+        <ul style="margin-top: 10px; padding-left: 15px; list-style: circle;">
+            <li>Supervisión constante</li>
+            <li>Reporte de bienestar incluido</li>
+        </ul>
+    </div>
+
+    <p class="toggle-text" style="margin-top: 15px; font-size: 0.7rem; color: var(--accent); font-weight: 600;">
+        <i class="fas fa-plus-circle"></i> Toca para ver más detalles
+    </p>
+`;
 
         // Acción de expandir al hacer clic
         card.addEventListener('click', () => {
-            card.classList.toggle('expanded');
-        });
+    card.classList.toggle('expanded');
+
+    const toggleText = card.querySelector('.toggle-text');
+
+    if (card.classList.contains('expanded')) {
+        toggleText.innerHTML = `
+            <i class="fas fa-minus-circle"></i> Ahora toca para ver menos
+        `;
+    } else {
+        toggleText.innerHTML = `
+            <i class="fas fa-plus-circle"></i> Toca para ver más detalles
+        `;
+    }
+});
 
         grid.appendChild(card);
     });
