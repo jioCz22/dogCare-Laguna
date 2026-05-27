@@ -1153,3 +1153,27 @@ html, body {
         grid-template-columns: 1fr;
     }
 }
+
+
+.desarrollador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    left: 50%;
+    opacity: 0.48;
+}
+
+.dev-name {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    transition: 0.3s ease;
+}
+
+.dev-name:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
