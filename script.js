@@ -102,7 +102,7 @@ function renderServicios() {
 
     if (card.classList.contains('expanded')) {
         toggleText.innerHTML = `
-            <i class="fas fa-minus-circle"></i> Ahora toca para ver menos
+            <i class="fas fa-minus-circle"></i> Toca para ver menos
         `;
     } else {
         toggleText.innerHTML = `
